@@ -1,4 +1,4 @@
-## SimpleApp
+## Simple Rest API for React-App
 
 ## Installation
 
@@ -36,59 +36,43 @@ POSTGRES_PORT='some port'
 JWT_SECRET='secretKay'
 ```
 
-## List of available roles
-```bash
-    ADMIN = 'admin',
-    BOSS = 'boss',
-    REGULAR = 'regular',
-```
-
 # Examples of requests
-# CreateUser
+# Create report
 ### POST
 
-### http://localhost:3000/users/create
+### http://localhost:8000/api/create/report
 ``` bash 
 {
-    "email": "regular545@gmail.com",
-    "password": "regula54r443254",
-    "username": "regul45ar54",
-    "role": "regular",
-    "bossId": 3
+    "userAgent": "Mozilla/5.0 (X11; CrOS x86_64 8172.45.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.64 Safari/537.36",
+    "category": "category 58",
+    "countryid": "it",
+    "creationdate": 1651281626947,
+    "id": "408f10d8-62a3-40bc-a65d-51c511bd78fa",
+    "clientid": "2f4cbf92-ca71-4f2f-ae0b-8d9a4f8b8d13",
+    "subcategory": "subcategory 01"
 }
 ```
+# Get all reports
+### GET
+### http://localhost:8000/api/reports
+
 # Login
 ### POST
-### http://localhost:3000/users/login
+### http://localhost:8000/apo/clients/login
 ``` bash 
 {
-    "email": "boss@gmail.com",
-    "username": "boss",
-    "password": "boss111",
-    "role": "boss"
+    "email": "user343@user.com",
+    "password": "33432423"
 }
 ```
 
-# Get users by id
-### GET
-### http://localhost:3000/users/${userId}
-### Example
-```bash
-http://localhost:3000/users/7
-```
-# Change boss
-### PATCH
-### http://localhost:3000/users/${userId}/change-boss
-### Example
-```bash
-http://localhost:3000/users/7/change-boss
-```
+# Registration
+### POST
+### http://localhost:8000/api/clients/create
 ``` bash 
 {
-    "email": "regular545@gmail.com",
-    "password": "regula54r443254",
-    "username": "regul45ar54",
-    "role": "regular",
-    "bossId": 4
+    "email": "password@gmail",
+    "username": "vika",
+    "password": "password"
 }
 ```
